@@ -4,5 +4,11 @@
   <p><%= link_to "edit", edit_article_path(@article)%> | 
   <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "really delete the article?"} %></p>
 
+  <h2>Post a comment</h2>
+  <%= render partial: 'comments/form'
+   %>
+
+  <h3>Comments</h3>
+  <%= render partial: 'comment', collection: @article.comments %>
   <%= link_to "<< Back to articles list", articles_path %>
 </div>
