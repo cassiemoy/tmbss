@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   include ArticlesHelper
 
+  def index2
+    p "made it to index2"
+  end
+
   def index
     @articles = Article.all
   end

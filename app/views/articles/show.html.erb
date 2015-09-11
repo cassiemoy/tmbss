@@ -1,6 +1,13 @@
 <div class="container">
   <h1><%= @article.title %></h1>
   <p><%= @article.body %></p>
+  
+  <p>Tags:
+    <% @article.tags.each do |tag| %>
+      <%= link_to tag.name, tag_path(tag) %>
+    <% end %>
+  </p>
+
   <p><%= link_to "edit", edit_article_path(@article)%> | 
   <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "really delete the article?"} %></p>
 
